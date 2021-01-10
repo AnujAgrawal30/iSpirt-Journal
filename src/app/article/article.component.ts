@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Article } from '../models';
 
 @Component({
   selector: 'app-article',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService) { }
+
+  article: Article | undefined;
 
   ngOnInit(): void {
-    console.log(window.location.href.split('/')[4]);
+    var article_index = window.location.href.split('/')[4];
+    this.api.get_article(parseInt(article_index))
+    .subscribe (
+      response => {this.article = response; console.log(this.article)},
+      error => {console.log(error);}
+    )
   }
 
 }

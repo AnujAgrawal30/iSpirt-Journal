@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { ArticleName } from '../models';
 
 @Component({
   selector: 'app-journal',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JournalComponent implements OnInit {
 
-  constructor() { }
+  articles: ArticleName[] = [];
+
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     console.log(window.location.href.split('/')[4]);
+    this.api.get_articles()
+    .subscribe (
+      response => {console.log(response); this.articles = response;},
+      error => {console.log(error)}
+    )
   }
 
 }
