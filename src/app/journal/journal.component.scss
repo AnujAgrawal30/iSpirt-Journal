@@ -9,7 +9,17 @@
     .article {
         font-size: 1.5vw;
         cursor: pointer;
-        margin: 1vw 0vw;
+        margin: 3vw 0vw;
         text-decoration: underline;
+
+        .info-container {
+            display: flex;
+
+            .info {
+                font-size: 1vw;
+                margin-right: 3vw;
+                text-decoration: unset;
+            }
+        }
     }
 }

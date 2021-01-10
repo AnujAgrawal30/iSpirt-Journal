@@ -23,5 +23,6 @@ export interface Article {
 
 export interface ArticleName {
     title: string,
-    content: string,
+    author: string,
+    tags: string,
 }

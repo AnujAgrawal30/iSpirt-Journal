@@ -5,6 +5,14 @@
     <div *ngFor="let article of articles; index as i">
         <div (click)="navigate('articles/'+(i+1))" class="article">
             {{article.title}}
+            <div class="info-container">
+                <div class="info">
+                    Author: {{article.author}}
+                </div>
+                <div class="info">
+                    Tags: {{article.tags}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
