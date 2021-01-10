@@ -3,17 +3,12 @@ export interface Journal {
     description: string,
 }
 
-export interface ArticleSection {
-    title: string,
-    content: string,
-}
-
 export interface Article {
     name: string,
     journal: Journal,
     title: string,
     abstract: string,
-    sections: ArticleSection[],
+    content: string,
     author: string,
     last_update: string,
     tags: string,

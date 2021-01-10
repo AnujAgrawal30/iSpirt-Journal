@@ -7,7 +7,8 @@ import { Article, ArticleName } from './models';
 })
 export class ApiService {
 
-  base_url = "http://127.0.0.1:8000/"
+  // base_url = "http://127.0.0.1:8000/"
+  base_url = "http://journals.ispirt.in/api/"
 
   constructor(private http: HttpClient) { }
 
