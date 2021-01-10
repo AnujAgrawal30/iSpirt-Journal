@@ -1,0 +1,18 @@
+.header-container {
+    display: flex;
+    background-color: black;
+    color: white;
+
+    .logo {
+
+    }
+    .headers {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-around;
+
+        .header {
+            
+        }
+    }
+}
