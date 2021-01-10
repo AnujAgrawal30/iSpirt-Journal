@@ -11,6 +11,7 @@ import { ArticleName } from '../models';
 export class JournalComponent implements OnInit {
 
   articles: ArticleName[] = [];
+  background = "";
 
   constructor(private api: ApiService, private router: Router) { }
 
@@ -21,6 +22,10 @@ export class JournalComponent implements OnInit {
       response => {console.log(response); this.articles = response;},
       error => {console.log(error)}
     )
+
+    var var1 = 255 * Math.random();
+    var var2 = 255 * Math.random();
+    this.background = "linear-gradient(to left bottom, hsl(" + var1 + ", 100%, 85%) 0%,hsl(" + var2 + ", 100%, 85%) 100%)"
   }
   navigate(path: string){
     console.log(path);
