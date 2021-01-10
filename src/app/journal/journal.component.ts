@@ -15,7 +15,7 @@ export class JournalComponent implements OnInit {
   constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(window.location.href.split('/')[4]);
+    // console.log(window.location.href.split('/')[4]);
     this.api.get_articles()
     .subscribe (
       response => {console.log(response); this.articles = response;},

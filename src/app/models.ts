@@ -11,7 +11,7 @@ export interface Article {
     abstract: string,
     content: string,
     author: string,
-    last_update: string,
+    last_update: Date,
     tags: string,
     designation: string,
     disclosures: string,

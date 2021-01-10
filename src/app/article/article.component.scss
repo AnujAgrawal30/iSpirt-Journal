@@ -1,4 +1,35 @@
-.body {
-    // display: flex;
-    max-width: 100vw;
+.container {
+    padding: 2vw;
+
+    .heading {
+        font-size: 3vw;
+        margin-bottom: 2vw;
+    }
+    .info-container {
+        display: flex;
+        justify-content: space-between;
+
+        .left-container {
+            .info {
+                display: flex;
+                padding: 0vw 4vw;
+
+                .info-head {
+                    font-weight: 800;
+                    width: 10vw;
+                }
+                .info-data {
+                    margin-left: 1vw;
+                }
+            }
+        }
+    }
+    .hline {
+        border-bottom: 2px solid gray;
+        height: 1px;
+        margin: 2vw 0vw;
+    }
+    .content {
+        font-size: 1vw;
+    }
 }

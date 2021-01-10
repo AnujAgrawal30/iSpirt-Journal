@@ -5,9 +5,9 @@ import { JournalComponent } from './journal/journal.component';
 import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent },
+  { path: '', component: JournalComponent },
   { path: 'articles/:name', component: ArticleComponent },
-  { path: 'journal/:name', component: JournalComponent },
+  // { path: 'journal/:name', component: JournalComponent },
   {path: '**', redirectTo: ''},
 ];
 

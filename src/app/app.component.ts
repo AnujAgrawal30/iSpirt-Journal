@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'journal';
+  background = "linear-gradient(to left bottom, hsl(109, 100%, 85%) 0%,hsl(233, 100%, 85%) 100%)"
 
   constructor(private router: Router){}
 

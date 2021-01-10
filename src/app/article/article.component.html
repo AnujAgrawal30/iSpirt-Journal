@@ -1,5 +1,85 @@
 <div *ngIf="article" class="container">
-    <div class="title">{{article.title}}</div>
+    <div class="heading">{{article.title}}</div>
+    <div class="hline"></div>
+    <div class="info-container">
+        <div class="left-container">
+            <div class="info">
+                <div class="info-head">
+                    Author:
+                </div>
+                <div class="info-data">
+                    {{article.author}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Last Update:
+                </div>
+                <div class="info-data">
+                    {{article.last_update}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Tags:
+                </div>
+                <div class="info-data">
+                    {{article.tags}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Status:
+                </div>
+                <div class="info-data">
+                    {{article.status}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Disclosures:
+                </div>
+                <div class="info-data">
+                    {{article.disclosures}}
+                </div>
+            </div>
+        </div>
+        <div class="left-container">
+            <div class="info">
+                <div class="info-head">
+                    Designations:
+                </div>
+                <div class="info-data">
+                    {{article.designation}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Peer Reviewed:
+                </div>
+                <div class="info-data">
+                    {{article.peer_reviewed}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Affiliation:
+                </div>
+                <div class="info-data">
+                    {{article.affiliation}}
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    External Funding:
+                </div>
+                <div class="info-data">
+                    {{article.external_funding}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hline"></div>
     <div class="content">
         <app-markdown [text]='article.content'></app-markdown>
     </div>

@@ -1,27 +1,6 @@
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: solid black;
-    padding: 0.5vw 3vw;
-    background-color: white;
-
-    .logo {
-        background-image: url("../assets/logo.png");
-        background-size: 7vw;
-        width: 7vw;
-        height: 3vw;
-        background-repeat: no-repeat;
-        cursor: pointer ;
-    }
-    .headers {
-        display: flex;
-        justify-content: space-around;
-        cursor: pointer;
-
-        .header {
-            margin: 0vw 2vw;
-            text-decoration: underline;
-        }
-    }
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    z-index: -1;
 }
