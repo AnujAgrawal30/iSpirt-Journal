@@ -1,22 +1,37 @@
 .container {
-    padding: 2vw;
+    padding: 4vw 8vw;
+    @media only screen and (max-width: 600px) {
+        padding: 8vw;
+    }
 
     .heading {
         font-size: 3vw;
         margin-bottom: 2vw;
+        @media only screen and (max-width: 600px) {
+            font-size: 5vw;
+        }
     }
     .info-container {
         display: flex;
         justify-content: space-between;
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+        }
 
         .left-container {
             .info {
                 display: flex;
                 padding: 0vw 4vw;
+                @media only screen and (max-width: 600px) {
+                    font-size: 3vw;
+                }
 
                 .info-head {
                     font-weight: 800;
                     width: 10vw;
+                    @media only screen and (max-width: 600px) {
+                        width: 25vw;
+                    }
                 }
                 .info-data {
                     margin-left: 1vw;
@@ -31,5 +46,8 @@
     }
     .content {
         font-size: 1vw;
+        @media only screen and (max-width: 600px) {
+            font-size: 3vw;
+        }
     }
 }

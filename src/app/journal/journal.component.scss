@@ -1,9 +1,15 @@
 .container {
     padding: 2vw;
+    @media only screen and (max-width: 600px) {
+        padding: 6vw;
+    }
 
     .heading {
         font-size: 3vw;
         margin-bottom: 2vw;
+        @media only screen and (max-width: 600px) {
+            font-size: 8vw;
+        }
     }
 
     .article {
@@ -11,6 +17,10 @@
         cursor: pointer;
         margin: 3vw 0vw;
         text-decoration: underline;
+        @media only screen and (max-width: 600px) {
+            font-size: 4vw;
+            margin: 7vw 0vw;
+        }
 
         .info-container {
             display: flex;
@@ -19,6 +29,9 @@
                 font-size: 1vw;
                 margin-right: 3vw;
                 text-decoration: unset;
+                @media only screen and (max-width: 600px) {
+                    font-size: 3vw;
+                }
             }
         }
     }
