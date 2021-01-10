@@ -4,6 +4,7 @@ export interface Journal {
 }
 
 export interface Article {
+    id: number,
     name: string,
     journal: Journal,
     title: string,

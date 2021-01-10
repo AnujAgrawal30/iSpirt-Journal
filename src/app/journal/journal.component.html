@@ -1,5 +1,7 @@
 <div class="container">
     <div *ngFor="let article of articles; index as i">
-        {{i+1}}. {{article.title}}
+        <div (click)="navigate('articles/'+(i+1))" class="article">
+            {{i+1}}. {{article.title}}
+        </div>
     </div>
 </div>

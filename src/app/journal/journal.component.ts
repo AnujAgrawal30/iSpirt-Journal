@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { ArticleName } from '../models';
 
@@ -11,7 +12,7 @@ export class JournalComponent implements OnInit {
 
   articles: ArticleName[] = [];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     console.log(window.location.href.split('/')[4]);
@@ -20,6 +21,10 @@ export class JournalComponent implements OnInit {
       response => {console.log(response); this.articles = response;},
       error => {console.log(error)}
     )
+  }
+  navigate(path: string){
+    console.log(path);
+    this.router.navigate([path]);
   }
 
 }

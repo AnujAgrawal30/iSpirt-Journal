@@ -1,14 +1,14 @@
 <div class="header-container">
-  <div class="logo"></div>
+  <div (click)="navigate('')" class="logo"></div>
   <div class="headers">
-    <div class="header">
+    <div (click)="navigate('')" class="header">
       Home
     </div>
-    <div class="header">
-      Home
+    <div (click)="navigate('journal/1')" class="header">
+      Articles
     </div>
-    <div class="header">
-      Home
+    <div (click)="navigate('')" class="header">
+      Any other link
     </div>
   </div>
 </div>
