@@ -9,6 +9,8 @@ import { ArticleComponent } from './article/article.component';
 import { JournalComponent } from './journal/journal.component';
 import { MarkdownComponent } from './markdown/markdown.component';
 
+import {DisqusModule} from 'ngx-disqus';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { MarkdownComponent } from './markdown/markdown.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    DisqusModule.forRoot('journal-6'),
   ],
   providers: [],
   bootstrap: [AppComponent]
