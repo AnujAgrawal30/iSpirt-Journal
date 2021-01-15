@@ -4,7 +4,7 @@
         Articles
     </div>
     <div *ngFor="let article of articles; index as i">
-        <div (click)="navigate('articles/'+(i+1))" class="article">
+        <div (click)="navigate('articles/'+article.id)" class="article">
             {{article.title}}
             <div class="info-container">
                 <div class="info">

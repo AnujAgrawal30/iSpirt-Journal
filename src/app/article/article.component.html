@@ -1,6 +1,10 @@
 <div *ngIf="article" class="container">
     <div class="heading">{{article.title}}</div>
     <div class="hline"></div>
+    <div class="content">
+        <div class="abstract" [innerHTML]="article.abstract_html"></div>
+    </div>
+    <div class="hline"></div>
     <div class="info-container">
         <div class="left-container">
             <div class="info">
@@ -81,7 +85,7 @@
     </div>
     <div class="hline"></div>
     <div class="content">
-        <app-markdown [text]='article.content'></app-markdown>
+        <div [innerHTML]='article.content_html'></div>
     </div>
     <disqus [identifier]='article.id.toString()'></disqus>
 </div>

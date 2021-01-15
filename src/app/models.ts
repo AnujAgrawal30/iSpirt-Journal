@@ -8,8 +8,8 @@ export interface Article {
     name: string,
     journal: Journal,
     title: string,
-    abstract: string,
-    content: string,
+    abstract_html: string,
+    content_html: string,
     author: string,
     last_update: Date,
     tags: string,
@@ -22,6 +22,7 @@ export interface Article {
 }
 
 export interface ArticleName {
+    id: number,
     title: string,
     author: string,
     tags: string,
