@@ -26,12 +26,7 @@ import { APP_BASE_HREF } from '@angular/common';
     HttpClientModule,
     DisqusModule.forRoot('journal-6'),
   ],
-  providers: [
-    {
-      provide: APP_BASE_HREF,
-    useValue: '/'
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

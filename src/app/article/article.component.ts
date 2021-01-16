@@ -1,24 +1,35 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ApiService } from '../api.service';
 import { Article } from '../models';
+import * as $ from 'jquery';
+
+// @Pipe({ name: 'safeHtml'})
+// export class SafeHtmlPipe implements PipeTransform  {
+//   constructor(private sanitized: DomSanitizer) {}
+//   transform(value: string) {
+//     return this.sanitized.bypassSecurityTrustHtml(value);
+//   }
+// }
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
-  providers: [
-    {
-      provide: APP_BASE_HREF,
-    useValue: window.location.href
-    }
-  ]
+  // providers: [
+  //   {
+  //     provide: APP_BASE_HREF,
+  //   useValue: window.location.href
+  //   }
+  // ]
 })
 export class ArticleComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private sanitized: DomSanitizer) { }
 
   article: Article | undefined;
+  content: any;
 
   ngOnInit(): void {
     var article_index = window.location.href.split('/')[4];
@@ -27,6 +38,25 @@ export class ArticleComponent implements OnInit {
       response => {
         this.article = response;
         console.log(this.article);
+        this.content = this.sanitized.bypassSecurityTrustHtml(this.article.content_html);
+
+
+
+        // this.article.content_html
+        setTimeout(() => {
+          var elements: HTMLCollectionOf<HTMLAnchorElement> = document.getElementsByTagName('a');
+          console.log(elements.length);
+          for (let i = 0; i < elements.length; i++){
+            elements[i].href = window.location.href + "#" + elements[i].href.split('#').pop();
+          }
+        }, 1000);
+
+
+
+      // $("a[href^='\#']").each(function(){
+      //   (this as HTMLLinkElement).href=location.href.split("#")[0]+'#'+(this as HTMLLinkElement).href.substr((this as HTMLLinkElement).href.indexOf('#')+1);
+      //   console.log(this.innerHTML);
+      // });
         // var indices: number[] = [];
         // var i = 0;
         // while (this.article.content_html.indexOf('#', i) != -1){
@@ -40,6 +70,9 @@ export class ArticleComponent implements OnInit {
       },
       error => {console.log(error);}
     )
+
+    // $().ready(function() {
+    // });
   }
 
 }
