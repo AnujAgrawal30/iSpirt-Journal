@@ -43,13 +43,15 @@ export class ArticleComponent implements OnInit {
 
 
         // this.article.content_html
-        setTimeout(() => {
-          var elements: HTMLCollectionOf<HTMLAnchorElement> = document.getElementsByTagName('a');
-          console.log(elements.length);
-          for (let i = 0; i < elements.length; i++){
-            elements[i].href = window.location.href + "#" + elements[i].href.split('#').pop();
-          }
-        }, 1000);
+        if (window.location.href.indexOf('#') == -1){
+          setTimeout(() => {
+            var elements: HTMLCollectionOf<HTMLAnchorElement> = document.getElementsByTagName('a');
+            console.log(elements.length);
+            for (let i = 0; i < elements.length; i++){
+              elements[i].href = window.location.href + "#" + elements[i].href.split('#').pop();
+            }
+          }, 1000);
+        }
 
 
 

@@ -1,7 +1,40 @@
 .container {
-    padding: 2vw;
-    @media only screen and (max-width: 600px) {
-        padding: 6vw;
+
+    .landing {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .logo {
+            background-image: url("../../assets/ispirt-logo.svg");
+            background-repeat: no-repeat;
+            background-size: 8vw;
+            width: 8vw;
+            height: 10vw;
+        }
+        .desc {
+            font-size: 3vw;
+        }
+        .button {
+            border: solid orange;
+            padding: 1vw;
+            border-radius: 2vw;
+            color: orange;
+            cursor: pointer;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+    .journal {
+        min-height: 100vh;
+        padding: 2vw;
+        @media only screen and (max-width: 600px) {
+            padding: 6vw;
+        }
     }
 
     .heading {
@@ -12,25 +45,35 @@
         }
     }
 
-    .article {
-        font-size: 1.5vw;
-        cursor: pointer;
-        margin: 3vw 0vw;
-        text-decoration: underline;
-        @media only screen and (max-width: 600px) {
-            font-size: 4vw;
-            margin: 7vw 0vw;
-        }
+    .article-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .article {
+            font-size: 1.5vw;
+            cursor: pointer;
+            margin: 3vw 0vw;
+            // text-decoration: underline;
+            width: 20vw;
+            border: solid orange;
+            padding: 3vw;
+            margin: 2vw 5vw;
+            @media only screen and (max-width: 600px) {
+                font-size: 4vw;
+                margin: 7vw 0vw;
+            }
 
-        .info-container {
-            display: flex;
+            .info-container {
+                display: flex;
 
-            .info {
-                font-size: 1vw;
-                margin-right: 3vw;
-                text-decoration: unset;
-                @media only screen and (max-width: 600px) {
-                    font-size: 3vw;
+                .info {
+                    font-size: 1vw;
+                    margin-right: 3vw;
+                    text-decoration: unset;
+                    @media only screen and (max-width: 600px) {
+                        font-size: 3vw;
+                    }
                 }
             }
         }

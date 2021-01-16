@@ -32,4 +32,8 @@ export class JournalComponent implements OnInit {
     this.router.navigate([path]);
   }
 
+  next(){
+    document.getElementsByClassName("journal")[0].scrollIntoView({behavior: 'smooth'})
+  }
+
 }

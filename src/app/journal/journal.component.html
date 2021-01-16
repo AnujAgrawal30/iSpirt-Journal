@@ -1,17 +1,30 @@
 <div [style.background]="background" class="background"></div>
 <div class="container">
-    <div class="heading">
-        Articles
+    <div class="landing">
+        <div class="logo"></div>
+        <div class="desc">
+            Lorem Ipsum.
+        </div>
+        <div (click)="next()" class="button">
+            Working Papers
+        </div>
     </div>
-    <div *ngFor="let article of articles; index as i">
-        <div (click)="navigate('articles/'+article.id)" class="article">
-            {{article.title}}
-            <div class="info-container">
-                <div class="info">
-                    Author: {{article.author}}
-                </div>
-                <div class="info">
-                    Tags: {{article.tags}}
+    <div class="journal">
+        <div class="heading">
+            Working Papers
+        </div>
+        <div class="article-container">
+            <div class="article" *ngFor="let article of articles; index as i">
+                <div (click)="navigate('articles/'+article.id)">
+                    {{article.title}}
+                    <div class="info-container">
+                        <div class="info">
+                            Author: {{article.author}}
+                        </div>
+                        <div class="info">
+                            Tags: {{article.tags}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
