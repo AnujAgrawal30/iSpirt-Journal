@@ -10,6 +10,7 @@ import { JournalComponent } from './journal/journal.component';
 import { MarkdownComponent } from './markdown/markdown.component';
 
 import {DisqusModule} from 'ngx-disqus';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,12 @@ import {DisqusModule} from 'ngx-disqus';
     HttpClientModule,
     DisqusModule.forRoot('journal-6'),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+    useValue: '/'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
