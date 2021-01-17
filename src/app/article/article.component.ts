@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ApiService } from '../api.service';
 import { Article } from '../models';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 
 // @Pipe({ name: 'safeHtml'})
 // export class SafeHtmlPipe implements PipeTransform  {
@@ -26,10 +27,14 @@ import * as $ from 'jquery';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor(private api: ApiService, private sanitized: DomSanitizer) { }
+  constructor(private api: ApiService, private sanitized: DomSanitizer, private router: Router) { }
 
   article: Article | undefined;
   content: any;
+
+  go_home(){
+    this.router.navigate(['/'])
+  }
 
   ngOnInit(): void {
     var article_index = window.location.href.split('/')[4];
