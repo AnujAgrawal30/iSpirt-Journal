@@ -44,7 +44,7 @@ export class ArticleComponent implements OnInit {
         this.article = response;
         console.log(this.article);
         var newStr = this.article.content_html.replace(/(<a href=")?((https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)))(">(.*)<\/a>)?/gi, function () {
-    return '<a style="color:unset" href="' + arguments[2] + '">' + (arguments[7] || arguments[2]) + '</a>'
+    return '<a target="blank" style="color:unset" href="' + arguments[2] + '">' + (arguments[7] || arguments[2]) + '</a>'
 });
         this.content = this.sanitized.bypassSecurityTrustHtml(newStr);
 
@@ -59,7 +59,10 @@ export class ArticleComponent implements OnInit {
           var elements: HTMLCollectionOf<HTMLAnchorElement> = document.getElementsByTagName('a');
           console.log(elements.length);
           for (let i = 0; i < elements.length; i++){
-            elements[i].href = window.location.href + "#" + elements[i].href.split('#').pop();
+            if (elements[i].href.indexOf('#') != -1){
+              elements[i].href = window.location.href + "#" + elements[i].href.split('#').pop();
+            }
+            
           }
         }, 1000);
 
