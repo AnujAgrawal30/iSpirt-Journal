@@ -43,7 +43,10 @@ export class ArticleComponent implements OnInit {
       response => {
         this.article = response;
         console.log(this.article);
-        this.content = this.sanitized.bypassSecurityTrustHtml(this.article.content_html);
+        var newStr = this.article.content_html.replace(/(<a href=")?((https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)))(">(.*)<\/a>)?/gi, function () {
+    return '<a style="color:unset" href="' + arguments[2] + '">' + (arguments[7] || arguments[2]) + '</a>'
+});
+        this.content = this.sanitized.bypassSecurityTrustHtml(newStr);
 
 
 
