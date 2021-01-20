@@ -48,15 +48,15 @@ export class ArticleComponent implements OnInit {
 
 
         // this.article.content_html
-        var link = window.localStorage.href;
+        // var link = window.localStorage.href;
         if (window.location.href.indexOf('#') != -1){
-          link = window.location.href.split('#')[0];
+          window.location.href = window.location.href.split('#')[0];
         }
         setTimeout(() => {
           var elements: HTMLCollectionOf<HTMLAnchorElement> = document.getElementsByTagName('a');
           console.log(elements.length);
           for (let i = 0; i < elements.length; i++){
-            elements[i].href = link + "#" + elements[i].href.split('#').pop();
+            elements[i].href = window.location.href + "#" + elements[i].href.split('#').pop();
           }
         }, 1000);
 
