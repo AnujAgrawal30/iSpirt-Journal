@@ -1,4 +1,7 @@
 .container {
+    @media only screen and (max-width: 600px) {
+        font-size: 4vw;
+    }
 
     .landing {
         height: 100vh;
@@ -13,12 +16,21 @@
             background-size: 8vw;
             width: 8vw;
             height: 10vw;
+            @media only screen and (max-width: 600px) {
+                background-size: 20vw;
+                width: 20vw;
+                height: 30vw;
+            }
         }
         .desc {
             margin-top: 1vw;
             font-size: 1.2vw;
             width: 80%;
             line-height: 1.8vw;
+            @media only screen and (max-width: 600px) {
+                font-size: 3vw;
+                line-height: unset;
+            }
         }
         .button {
             border: solid orange;
@@ -65,10 +77,15 @@
             @media only screen and (max-width: 600px) {
                 font-size: 4vw;
                 margin: 7vw 0vw;
+                width: 30vw;
+                margin: 3vw 3vw;
             }
 
             .info-container {
                 display: flex;
+                @media only screen and (max-width: 600px) {
+                    flex-direction: column;
+                }
 
                 .info {
                     font-size: 1vw;

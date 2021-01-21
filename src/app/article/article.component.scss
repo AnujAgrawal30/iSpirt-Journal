@@ -1,7 +1,9 @@
 .container {
     padding: 4vw 8vw;
+    font-size: 1.5vw;
     @media only screen and (max-width: 600px) {
         padding: 8vw;
+        font-size: 4vw;
     }
 
     .heading {
@@ -28,7 +30,7 @@
 
                 .info-head {
                     font-weight: 800;
-                    width: 10vw;
+                    width: 15vw;
                     @media only screen and (max-width: 600px) {
                         width: 28vw;
                     }
@@ -45,9 +47,9 @@
         margin: 2vw 0vw;
     }
     .content {
-        font-size: 1vw;
+        font-size: 1.5vw;
         @media only screen and (max-width: 600px) {
-            font-size: 3vw;
+            font-size: 4vw;
         }
     }
 }
