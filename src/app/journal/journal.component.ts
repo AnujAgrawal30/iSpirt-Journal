@@ -34,7 +34,7 @@ export class JournalComponent implements OnInit {
   }
 
   next(){
-    document.getElementsByClassName("journal")[0].scrollIntoView({behavior: 'smooth'})
+    // document.getElementsByClassName("journal")[0].scrollIntoView({behavior: 'smooth'})
   }
 
 }
