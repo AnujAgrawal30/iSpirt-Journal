@@ -23,6 +23,7 @@ export interface Article {
 
 export interface ArticleName {
     id: number,
+    name: string,
     title: string,
     author: string,
     tags: string,

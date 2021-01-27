@@ -38,7 +38,9 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     var article_index = window.location.href.split('/')[4];
-    this.api.get_article(parseInt(article_index))
+    console.log(article_index)
+    console.log(window.location.href);
+    this.api.get_article(article_index)
     .subscribe (
       response => {
         this.article = response;

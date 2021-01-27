@@ -16,7 +16,10 @@ export class ApiService {
     return this.http.get<ArticleName[]>(this.base_url + "journal/articles")
   }
 
-  get_article(index: number) {
-    return this.http.get<Article>(this.base_url + "journal/articles/" + index);
+  get_article(name: any) {
+    console.log("-----");
+    console.log(name);
+    console.log('-----');
+    return this.http.get<Article>(this.base_url + "journal/article_by_name", {params: {name: name}});
   }
 }
