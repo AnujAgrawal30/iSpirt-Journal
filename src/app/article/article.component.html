@@ -1,94 +1,101 @@
-<div class="s">
-<div (click)="go_home()" class="logo"></div>
-<div (click)="go_home()" class="home">Home</div></div>
+<header>
+  <div (click)="go_home()" class="logo"></div>
+  <nav>
+    <ul>
+      <li (click)="go_home()">
+        Home
+      </li>
+    </ul>
+  </nav>
+</header>
 <div *ngIf="article" class="container">
-    <div class="heading">{{article.title}}</div>
-    <div class="hline"></div>
-    <div class="content">
-        <div class="abstract" [innerHTML]="article.abstract_html"></div>
-    </div>
-    <div class="hline"></div>
-    <div class="info-container">
-        <div class="left-container">
-            <div class="info">
-                <div class="info-head">
-                    Author:
-                </div>
-                <div class="info-data">
-                    {{article.author}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    Last Update:
-                </div>
-                <div class="info-data">
-                    {{article.last_update}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    Tags:
-                </div>
-                <div class="info-data">
-                    {{article.tags}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    Status:
-                </div>
-                <div class="info-data">
-                    {{article.status}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    Disclosures:
-                </div>
-                <div class="info-data">
-                    {{article.disclosures}}
-                </div>
-            </div>
+  <div class="heading">{{article.title}}</div>
+  <div class="hline"></div>
+  <div class="content">
+    <div class="abstract" [innerHTML]="article.abstract_html"></div>
+  </div>
+  <div class="hline"></div>
+  <div class="info-container">
+    <div class="left-container">
+      <div class="info">
+        <div class="info-head">
+          Author:
         </div>
-        <div class="left-container">
-            <div class="info">
-                <div class="info-head">
-                    Designations:
-                </div>
-                <div class="info-data">
-                    {{article.designation}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    Peer Reviewed:
-                </div>
-                <div class="info-data">
-                    {{article.peer_reviewed}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    Affiliation:
-                </div>
-                <div class="info-data">
-                    {{article.affiliation}}
-                </div>
-            </div>
-            <div class="info">
-                <div class="info-head">
-                    External Funding:
-                </div>
-                <div class="info-data">
-                    {{article.external_funding}}
-                </div>
-            </div>
+        <div class="info-data">
+          {{article.author}}
         </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          Last Update:
+        </div>
+        <div class="info-data">
+          {{article.last_update}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          Tags:
+        </div>
+        <div class="info-data">
+          {{article.tags}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          Status:
+        </div>
+        <div class="info-data">
+          {{article.status}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          Disclosures:
+        </div>
+        <div class="info-data">
+          {{article.disclosures}}
+        </div>
+      </div>
     </div>
-    <div class="hline"></div>
-    <div class="content">
-        <div [innerHTML]='content'></div>
+    <div class="left-container">
+      <div class="info">
+        <div class="info-head">
+          Designations:
+        </div>
+        <div class="info-data">
+          {{article.designation}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          Peer Reviewed:
+        </div>
+        <div class="info-data">
+          {{article.peer_reviewed}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          Affiliation:
+        </div>
+        <div class="info-data">
+          {{article.affiliation}}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info-head">
+          External Funding:
+        </div>
+        <div class="info-data">
+          {{article.external_funding}}
+        </div>
+      </div>
     </div>
-    <!-- <disqus [identifier]='article.id.toString()'></disqus> -->
+  </div>
+  <div class="hline"></div>
+  <div class="content">
+    <div [innerHTML]='content'></div>
+  </div>
+  <!-- <disqus [identifier]='article.id.toString()'></disqus> -->
 </div>
