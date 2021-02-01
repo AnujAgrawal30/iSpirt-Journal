@@ -1,50 +1,69 @@
-<div [style.background]="background" class="background"></div>
-<div class="container">
-    <div class="landing">
-        <div class="logo"></div>
-        <div class="desc">
-            Research.iSPIRT attempts to systematically integrate the accumulated knowledge and working experience of the
-            organization with contemporary scholarship and policy formulation. India has built an array of Application
-            Programming Interfaces (APIs) that serve as base infrastructure for digitalizing traditional sectors of the
-            economy; anchor value generation from the digital economy in practices that are not driven by the ability to
-            capture and hoard data; and configure, as a result, new institutional arrangements between the state and the
-            private sector in the provision of civic services. This is an ambitious undertaking, complicated by the fact
-            that there are few prescriptive theories for the development or deployment of such technologies, or
-            analytical frameworks to evaluate their consequences.
-<br><br>
-            In its capacity as a non-profit think tank, iSPIRT has helped develop and evangelise many of these APIs. The
-            iterative process of forging ‘first-mover’ coalitions of public and private entities to scale the
-            implementation of APIs, and working with independent regulators to secure their confidence and approval, has
-            offered iSPIRT a ringside view of how government and market interact with such technologies. The adoption of
-            these APIs – through user-facing apps – by Indian citizens has also gathered pace in recent years. Successes
-            and failures in API development, implementation, and roll-out offer a body of evidence that can chart future
-            policies as well as guide academic engagement. The working papers/publications in this portal do not
-            retrofit a grand theory into the creation of APIs and attendant ecosystems. They offer inductive frameworks
-            that could shape policies in India, as well as other jurisdictions that may want to emulate the “India
-            Stack” model.
-        </div>
-        <div (click)="next()" class="button">
-            Working Papers
-        </div>
+<div class="background"></div>
+<div class="journal-container">
+  <div class="landing">
+
+    <div class="logo"></div>
+    <div class="desc">
+      <p>
+        Research.iSPIRT attempts to systematically integrate the accumulated knowledge and working experience of the
+        organization with contemporary scholarship and policy formulation. India has built an array of Application
+        Programming Interfaces (APIs) that serve as base infrastructure for digitalizing traditional sectors of the
+        economy; anchor value generation from the digital economy in practices that are not driven by the ability to
+        capture and hoard data; and configure, as a result, new institutional arrangements between the state and the
+        private sector in the provision of civic services. This is an ambitious undertaking, complicated by the fact
+        that there are few prescriptive theories for the development or deployment of such technologies, or
+        analytical frameworks to evaluate their consequences.
+      </p>
+      <p>
+        In its capacity as a non-profit think tank, iSPIRT has helped develop and evangelise many of these APIs. The
+        iterative process of forging ‘first-mover’ coalitions of public and private entities to scale the
+        implementation of APIs, and working with independent regulators to secure their confidence and approval, has
+        offered iSPIRT a ringside view of how government and market interact with such technologies. The adoption of
+        these APIs – through user-facing apps – by Indian citizens has also gathered pace in recent years. Successes
+        and failures in API development, implementation, and roll-out offer a body of evidence that can chart future
+        policies as well as guide academic engagement. The working papers/publications in this portal do not
+        retrofit a grand theory into the creation of APIs and attendant ecosystems. They offer inductive frameworks
+        that could shape policies in India, as well as other jurisdictions that may want to emulate the “India
+        Stack” model.
+      </p>
     </div>
-    <div class="journal">
-        <div class="heading">
-            Working Papers
-        </div>
-        <div class="article-container">
-            <div class="article" *ngFor="let article of articles; index as i">
-                <div (click)="navigate('articles/'+article.name)">
-                    {{article.title}}
-                    <div class="info-container">
-                        <div class="info">
-                            Author: {{article.author}}
-                        </div>
-                        <div class="info">
-                            Tags: {{article.tags}}
-                        </div>
-                    </div>
-                </div>
+    <button (click)="next()" class="btn primary">
+      <i style="margin-right: 5px" class="fas fa-paperclip"></i> Working Papers
+    </button>
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ee4e14" fill-opacity="1"
+        d="M0,64L48,69.3C96,75,192,85,288,106.7C384,128,480,160,576,176C672,192,768,192,864,176C960,160,1056,128,1152,106.7C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+  <div class="journal">
+    <div class="heading">
+      Working Papers
+      <div class="underline"></div>
+    </div>
+    <div class="article-container">
+      <div (click)="navigate('articles/'+article.name)" class="article" *ngFor="let article of articles; index as i">
+        <div class="bar"></div>
+        <div class="title">{{article.title}}</div>
+        <div class="info-container">
+          <div class="info">
+            <div class="info-one">
+              <div class="key">Author</div>
+              <div class="value">{{article.author}}</div>
             </div>
+            <div class="info-one">
+              <div class="key">Tags</div>
+              <div class="value">{{article.tags}}</div>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow__circle">
+              <div class="arrow__triangle"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

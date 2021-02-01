@@ -1,7 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$primary: #ee4e14;
+$primary-text: #34495e;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    // background-color: rgb(240, 240, 240);
-    font-family: "Source Sans Pro", "Arial", "sans-serif";
-    color: #34495e;
+  margin: 0;
+  // background-color: rgb(240, 240, 240);
+  // font-family: "Source Sans Pro", "Arial", "sans-serif";
+  font-family: "Montserrat", sans-serif;
+  color: $primary-text;
+}
+
+.btn {
+  font-size: 1vw;
+  background: none;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  border: 2px solid black;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 3vw;
+  }
+}
+
+.btn.primary {
+  background-color: white;
+  color: $primary;
+  border-color: $primary;
+
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $primary;
+    color: white;
+  }
 }

@@ -1,105 +1,269 @@
-.container {
-    @media only screen and (max-width: 600px) {
-        font-size: 4vw;
+@import "../../styles.scss";
+
+.journal-container {
+  @media only screen and (max-width: 600px) {
+    font-size: 4vw;
+  }
+
+  .landing {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    .wave {
+      position: absolute;
+      bottom: -75px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
     }
 
-    .landing {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    .logo {
+      background-image: url("../../assets/ispirt-logo.svg");
+      background-repeat: no-repeat;
+      background-size: 8vw;
+      width: 8vw;
+      height: 10vw;
+      margin: 2rem 0;
 
-        .logo {
-            background-image: url("../../assets/ispirt-logo.svg");
-            background-repeat: no-repeat;
-            background-size: 8vw;
-            width: 8vw;
-            height: 10vw;
-            @media only screen and (max-width: 600px) {
-                background-size: 20vw;
-                width: 20vw;
-                height: 30vw;
-            }
-        }
-        .desc {
-            margin-top: 1vw;
-            font-size: 1.2vw;
-            width: 80%;
-            line-height: 1.8vw;
-            @media only screen and (max-width: 600px) {
-                font-size: 3vw;
-                line-height: unset;
-            }
-        }
-        .button {
-            border: solid orange;
-            padding: 1vw;
-            border-radius: 2vw;
-            color: orange;
-            cursor: pointer;
-
-            &:hover {
-                color: gray;
-            }
-        }
+      @media only screen and (max-width: 600px) {
+        background-size: 20vw;
+        width: 20vw;
+        height: 30vw;
+        margin-bottom: 0;
+      }
     }
-    .journal {
-        min-height: 100vh;
-        padding: 2vw;
+
+    .desc {
+      font-size: 1vw;
+      font-weight: 600;
+
+      p {
+        line-height: 1.8vw;
+        text-align: center;
+        padding: 0 3rem;
+
         @media only screen and (max-width: 600px) {
-            padding: 6vw;
+          line-height: 4vw;
         }
-    }
+      }
 
-    .heading {
+      p + p {
+        margin-top: 1vw;
+      }
+
+      @media only screen and (max-width: 600px) {
         font-size: 3vw;
-        margin-bottom: 2vw;
-        @media only screen and (max-width: 600px) {
-            font-size: 8vw;
-        }
+        line-height: unset;
+      }
     }
 
-    .article-container{
+    button {
+      margin-top: 1rem;
+    }
+  }
+
+  .journal {
+    min-height: 100vh;
+    padding: 3rem 10rem;
+    @media only screen and (max-width: 600px) {
+      padding: 6vw;
+    }
+  }
+
+  .heading {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+
+    .underline {
+      width: 200px;
+      height: 5px;
+      background-color: $primary;
+      margin-top: 6px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 8vw;
+    }
+  }
+
+  .article-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .article {
+      cursor: pointer;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #e7e7e7;
+      overflow: hidden;
+      position: relative;
+
+      .bar {
+        width: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #e7e7e7;
+        transition: inherit;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        -ms-transition: inherit;
+        -o-transition: inherit;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        transition: inherit;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        -ms-transition: inherit;
+        -o-transition: inherit;
+      }
+
+      .info-container {
+        margin-top: auto;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        
-        .article {
-            font-size: 1.5vw;
-            cursor: pointer;
-            margin: 3vw 0vw;
-            // text-decoration: underline;
-            width: 20vw;
-            border: solid orange;
-            padding: 3vw;
-            margin: 2vw 5vw;
-            @media only screen and (max-width: 600px) {
-                font-size: 4vw;
-                margin: 7vw 0vw;
-                width: 30vw;
-                margin: 3vw 3vw;
-            }
 
-            .info-container {
-                display: flex;
-                flex-direction: column;
+        .info {
+          font-size: 0.8rem;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          flex: 1;
 
-                .info {
-                    font-size: 1vw;
-                    margin-right: 3vw;
-                    text-decoration: unset;
-                    @media only screen and (max-width: 600px) {
-                        font-size: 3vw;
-                    }
-                }
+          .info-one {
+            display: flex;
+            flex-direction: column;
+
+            .key {
+              font-size: 0.7rem;
+              font-weight: 700;
             }
+          }
         }
+
+        transition: inherit;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        -ms-transition: inherit;
+        -o-transition: inherit;
+
+        .arrow-container {
+          flex-basis: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .arrow__circle {
+            background: none;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #e7e7e7;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: inherit;
+            -webkit-transition: inherit;
+            -moz-transition: inherit;
+            -ms-transition: inherit;
+            -o-transition: inherit;
+
+            .arrow__triangle {
+              width: 0;
+              height: 0;
+              border-top: 7px solid transparent;
+              border-bottom: 7px solid transparent;
+              border-left: 10px solid #e7e7e7;
+              margin-left: 2px;
+
+              transition: inherit;
+              -webkit-transition: inherit;
+              -moz-transition: inherit;
+              -ms-transition: inherit;
+              -o-transition: inherit;
+            }
+          }
+          transition: inherit;
+          -webkit-transition: inherit;
+          -moz-transition: inherit;
+          -ms-transition: inherit;
+          -o-transition: inherit;
+        }
+      }
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        .title {
+          color: $primary;
+        }
+
+        .bar {
+          background-color: $primary;
+        }
+
+        .info-container {
+          .arrow-container {
+            .arrow__circle {
+              border-color: $primary;
+
+              .arrow__triangle {
+                border-left-color: $primary;
+              }
+            }
+          }
+        }
+
+        box-shadow: 0px 0px 10px 0px $primary;
+        border-color: $primary;
+      }
+
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
     }
+  }
 }
 .background {
-    position: fixed;
-    width: 100vw;
-    min-height: 100vh;
-    z-index: -1;
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
 }
