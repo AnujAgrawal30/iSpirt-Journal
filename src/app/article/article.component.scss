@@ -46,6 +46,13 @@ header {
   padding: 2rem 6rem;
   font-size: 1rem;
 
+  // Added to wrap lines in mobile view so that it doesnt make horizontal scroll bars
+  @media only screen and (max-width: 600px) {
+    p {
+      word-wrap: break-word;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     padding: 8vw;
     font-size: 4vw;
@@ -131,12 +138,6 @@ header {
 
   transition: all 0.3s ease;
 
-  // @media only screen and (max-width: 600px) {
-  //   right: unset;
-  //   left: 20px;
-  //   bottom: 20px;
-  // }
-
   &:hover {
     width: 180px;
     cursor: pointer;
@@ -144,6 +145,15 @@ header {
     .label {
       width: auto;
       margin-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    &:hover {
+      width: 50px;
+      .label {
+        display: none;
+      }
     }
   }
 }
