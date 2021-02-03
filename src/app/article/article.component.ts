@@ -93,4 +93,10 @@ export class ArticleComponent implements OnInit {
     // });
   }
 
+  goToTop() {
+    let header = document.querySelector('header')
+    if (header) {
+      header.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 }
