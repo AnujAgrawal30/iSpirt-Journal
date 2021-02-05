@@ -36,5 +36,8 @@ export class JournalComponent implements OnInit {
   next() {
     document.getElementsByClassName("journal")[0].scrollIntoView({ behavior: 'smooth' })
   }
+  goto(link: string){
+    window.location.href = link;
+  }
 
 }

@@ -41,7 +41,7 @@ export class ArticleComponent implements OnInit {
     var article_index = window.location.href.split('/')[4];
     console.log(article_index)
     console.log(window.location.href);
-    this.api.get_article(article_index)
+    this.api.get_article(article_index.split('#')[0])
       .subscribe(
         response => {
           this.article = response;
