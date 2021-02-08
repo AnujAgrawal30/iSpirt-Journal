@@ -30,9 +30,21 @@ body {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 1vw;
+    margin-right: 8px;
+  }
 
   @media only screen and (max-width: 600px) {
     font-size: 3vw;
+
+    svg {
+      width: 3vw;
+    }
   }
 }
 
@@ -47,8 +59,16 @@ body {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 
+  svg {
+    fill: $primary;
+  }
+
   &:hover {
     background-color: $primary;
     color: white;
+
+    svg {
+      fill: white;
+    }
   }
 }
